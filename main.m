@@ -1,6 +1,6 @@
 % The number of photons emitted from the detected target to the detector in 100ns is s.
 s = 1; 
-%Total detection time in 100ns
+%Total detection time (in 100ns)
 T = 10;   
 %Photon diffusion diameter, in number of anode spacers
 D_r = 5;  
