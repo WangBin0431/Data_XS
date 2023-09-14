@@ -159,11 +159,12 @@ end
 label_name = 'label';
 if var_name == 'T'
     var_value = var_value/10;
-    label_name = 'T(\mus)';
+    label_name = 'Detection time T (\mus)';
 elseif var_name == 'D'
-    label_name= 'D_r';
+    var_value = var_value*rate;
+    label_name= 'Diffuse spot diameter D_r (pixel)';
 elseif var_name == 's'
-    label_name = 's';
+    label_name = 'Number of photons s (pcs)';
 end
 figure;
 err_max = max(r_u)+max(r_s)+1;
@@ -174,6 +175,6 @@ hold on;
 errorbar(var_value,r_u2,r_s2,'blue');
 axis([var_value(1)-0.5,var_value(var_num)+1,0,1.2*err_max]);
 xlabel(label_name);
-ylabel('error(px)');
-legend('removing','retaining');
+ylabel('Error (pixel)');
+legend('Removing','Retaining');
 end
